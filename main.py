@@ -21,7 +21,7 @@ async def on_ready():
 async def on_message(message):
     # Check if the bot was mentioned in the message
     if bot.user in message.mentions:
-        await message.reply("No.")
+        await message.reply("Fuck You.")
     
     # Process commands if any
     await bot.process_commands(message)
