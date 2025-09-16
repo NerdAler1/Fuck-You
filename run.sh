@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # Find out where we are
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Script directory: $SCRIPT_DIR"
