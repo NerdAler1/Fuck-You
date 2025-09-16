@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
 from dotenv import dotenv_values
-# Replace 'YOUR_BOT_TOKEN' with your bot's token
-TOKEN = dotenv_values(".env")["UBTOKEN"]
+# Replace 'Discord_Bot_Token' with your bot's token
+TOKEN = dotenv_values(".env")["Discord_Bot_Token"]
 
 # Intents setup
 intents = discord.Intents.default()
