@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from dotenv import dotenv_values
-# Replace 'Discord_Bot_Token' with your bot's token
+# Replace 'YourTokenHere' with your bot's token
 TOKEN = dotenv_values(".env")["Discord_Bot_Token"]
 
 # Intents setup
