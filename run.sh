@@ -9,9 +9,13 @@ cd "$SCRIPT_DIR"
 
 # Check if .venv exists
 if [ ! -d ".venv" ]; then
-    echo "Error: .venv directory not found in $SCRIPT_DIR"
-    echo "Please create a virtual environment first with: python3 -m venv .venv"
-    exit 1
+    echo "Error: .venv directory not found in $SCRIPT_DIR, attempting to create one..."
+    python3 -m venv .venv
+    if [ $? -ne 0 ]; then
+        echo "Failed to create virtual environment. Please ensure Python 3 and venv are installed."
+        exit 1
+    fi
+    echo "Virtual environment created."
 fi
 
 # Activate the venv
@@ -19,12 +23,9 @@ source .venv/bin/activate
 echo "Venv activated."
 
 # Install dependencies
-if [ ! -f "requirements.txt" ]; then
-    echo "Installing dependencies..."
-    pip install -r requirements.txt
-else
-    echo "No requirements found, skipping dependency installation."
-fi
+echo "Installing dependencies..."
+pip install -r requirements.txt
+
 
 # Check if main.py exists
 if [ ! -f "main.py" ]; then
